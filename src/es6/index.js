@@ -70,3 +70,54 @@ console.log(globalVar);
 // dont has reassigned
 const a = "b";
 console.log(a);
+
+let firstName = "Juan";
+let age = 20;
+
+// Without Params In Object || es5
+const obj = { firstName: firstName, age: age };
+console.log(obj);
+
+// With Params In Object || es6
+const obj2 = { firstName, age };
+console.log(obj2);
+
+// Arrow Functions
+const names = [
+  { firstName, age },
+  { firstName: "Oscar", age: 34 },
+];
+
+// es5
+const listOfNames = names.map(function (item) {
+  console.log(item);
+});
+
+// es6 - ArrowFunctions
+const listOfNames2 = names.map((item) => console.log(item));
+
+const listOfNames3 = (firstName, age) => {
+  console.log(firstName, age);
+};
+
+const listofNames4 = (firstName) => {
+  console.log(firstName);
+};
+
+const square = (num) => num * num;
+console.log(listOfNames3("Juan", 20), listOfNames4("Juan"), square(3));
+
+// Promise in es5
+let booleanData = false;
+const helloPromise = () => {
+  return new Promise((resolve, reject) => {
+    if (booleanData) {
+      resolve("Hey, this is true!");
+    } else {
+      reject("Ups!!");
+    }
+  });
+};
+helloPromise()
+  .then((response) => console.log(response))
+  .catch((error) => console.log(error));
